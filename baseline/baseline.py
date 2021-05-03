@@ -107,6 +107,6 @@ if __name__ == "__main__":
     with open(args.config, 'r') as configfile:
         config = yaml.safe_load(configfile)
 
-    for _ in range(not args.number_out):
+    for _ in range(args.number_out):
         phrase = generate(**config, verbose=args.verbose)
         print(phrase)
