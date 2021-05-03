@@ -2,12 +2,11 @@
 This repo holds code for a final project in an ENLP class. The project is about creating a better passphrase generation system
 
 # baseline
-	```
 	baseline/
 	|
 	|-- baseline.py
 	|-- config.yml
-	```
+
 	
 This directory contains files for running the clone of Georgetown's baseline password system. This is NOT the
 exact system, but instead a recreation made to the best of our knowledge of how Georgetown's system works. 
