@@ -11,6 +11,7 @@ USAGE:
 import sys
 import yaml
 import random
+import argparse
 
 
 def load_words(filepath):
@@ -93,9 +94,19 @@ def generate(words, len_range_low, len_range_high, num_words, sep,
 
 
 if __name__ == "__main__":
-    config_path = sys.argv[1]
-    with open(config_path, 'r') as configfile:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--config', type=str, default='config.yml',
+                        help='path to config file in yaml format')
+    parser.add_argument('-v', '--verbose', type=bool, default=False,
+                        help='verbose output')
+    parser.add_argument('-n', '--number-phrases', type=int, default=1,
+                        dest="number_out",
+                        help="number of passphrases to return")
+    args = parser.parse_args()
+
+    with open(args.config, 'r') as configfile:
         config = yaml.safe_load(configfile)
 
-    phrase = generate(**config, verbose=True)
-    print(phrase)
+    for _ in range(not args.number_out):
+        phrase = generate(**config, verbose=args.verbose)
+        print(phrase)
