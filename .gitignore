@@ -1,2 +1,5 @@
 # micro logs
 log.txt
+
+# pycharm files
+.idea/*
