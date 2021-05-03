@@ -8,13 +8,14 @@ This repo holds code for a final project in an ENLP class. The project is about 
 	|-- baseline.py
 	|-- config.yml
 	```
-	This directory contains files for running the clone of Georgetown's baseline password system. This is NOT the
-	exact system, but instead a recreation made to the best of our knowledge of how Georgetown's system works. 
+	
+This directory contains files for running the clone of Georgetown's baseline password system. This is NOT the
+exact system, but instead a recreation made to the best of our knowledge of how Georgetown's system works. 
 
 ### Usage:
-	* change any params you want in config.yml, they are set to Georgetown's params by default
-	* `baseline.py [-h] [-c CONFIG] [-v VERBOSE] [-n NUMBER_OUT]`
-	* run `python baseline.py --help` for more info
+* change any params you want in config.yml, they are set to Georgetown's params by default
+* `baseline.py [-h] [-c CONFIG] [-v VERBOSE] [-n NUMBER_OUT]`
+* run `python baseline.py --help` for more info
 
 # data
 
