@@ -18,5 +18,9 @@ exact system, but instead a recreation made to the best of our knowledge of how 
 * run `python baseline.py --help` for more info
 
 # data
+	data/
+	|
+	|-- eff_large_wordlist.txt
 
+### EFF Wordlist
 source: https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
