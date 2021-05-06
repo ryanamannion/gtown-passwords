@@ -1,5 +1,5 @@
-# gtown-passwords
-This repo holds code for a final project in an ENLP class. The project is about creating a better passphrase generation system
+# Different approaches to Memorable Passphrase Generation
+This repo holds code for a final project in an ENLP class. The project is about creating a more memorable passphrase generation system
 
 # baseline
 	baseline/
