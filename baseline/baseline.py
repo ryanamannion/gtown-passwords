@@ -93,7 +93,7 @@ def generate(words, len_range_low, len_range_high, num_words, cap_words, sep,
                 # recursion, try again
                 gen()
             if cap_words:
-                rolled_words = [w.cpitalize() for w in rolled_words]
+                rolled_words = [w.capitalize() for w in rolled_words]
             return sep.join(rolled_words)
 
     passphrase = gen()
