@@ -6,6 +6,7 @@ This repo holds code for a final project in an ENLP class. The project is about 
 	|
 	|-- baseline.py
 	|-- config.yml
+	|-- baseline-sample-pass.txt
 
 	
 This directory contains files for running the clone of Georgetown's baseline password system. This is NOT the
