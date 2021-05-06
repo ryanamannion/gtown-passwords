@@ -1,9 +1,15 @@
 # path to DiceWords list
 words: "../data/eff_large_wordlist.txt"
 
-# parameters of output passphrase
+###################################
+# parameters of output passphrase #
+###################################
+
+# STATIC: Users of Georgetown's system cannot change these parameters
 len_range_low: 15         # min passphrase length
 len_range_high: 32        # max passphrase length
 num_words: 5              # number of words in passphrase
+
+# DYNAMIC: Users are allowed to change these parameters
 cap_words: yes            # toggle capitalize first letter of each word
 sep: None                 # word separator, choose from: [".", "!", "-", "@", None]
