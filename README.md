@@ -1,4 +1,4 @@
-# Different approaches to Memorable Passphrase Generation
+# Different Approaches to Memorable Passphrase Generation
 This repo holds code for a final project in an ENLP class. The project is about creating a more memorable passphrase generation system
 
 # baseline
