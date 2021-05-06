@@ -4,6 +4,6 @@ words: "../data/eff_large_wordlist.txt"
 # parameters of output passphrase
 len_range_low: 15         # min passphrase length
 len_range_high: 32        # max passphrase length
-num_words: 4              # number of words in passphrase
+num_words: 5              # number of words in passphrase
 cap_words: yes            # toggle capitalize first letter of each word
-sep: "."                  # word separator, choose from: [".", "!", "-", "@", None]
+sep: None                 # word separator, choose from: [".", "!", "-", "@", None]

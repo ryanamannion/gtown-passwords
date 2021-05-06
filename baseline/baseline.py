@@ -66,7 +66,7 @@ def generate(words, len_range_low, len_range_high, num_words, cap_words, sep,
 
     # separators contribute to the length of the phrase, adjust for that
     num_sep = num_words - 1
-    if sep is None:
+    if sep is None or 'None':
         sep = ''
     sep_chars = num_sep * len(sep)
     len_range = ((len_range_low - sep_chars), (len_range_high - sep_chars))
