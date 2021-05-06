@@ -5,8 +5,11 @@ baseline.py
 this file acts as the Georgetown baseline and is meant to be a clone of the new
 passphrase system based on information given to us by the Chief engineer of UIS
 
-USAGE:
-    $ python baseline.py path_to_config.yml
+BASIC USAGE (config.yml must be in same dir):
+    $ python baseline.py
+
+FOR MORE USAGE NOTES:
+    $ python baseline.py --help
 """
 import sys
 import yaml
@@ -42,7 +45,7 @@ def roll(n=5):
     return "".join(this_roll)
 
 
-def generate(words, len_range_low, len_range_high, num_words, sep,
+def generate(words, len_range_low, len_range_high, num_words, cap_words, sep,
              verbose=False):
     """
     Generates passphrase
@@ -63,6 +66,8 @@ def generate(words, len_range_low, len_range_high, num_words, sep,
 
     # separators contribute to the length of the phrase, adjust for that
     num_sep = num_words - 1
+    if sep is None:
+        sep = ''
     sep_chars = num_sep * len(sep)
     len_range = ((len_range_low - sep_chars), (len_range_high - sep_chars))
 
@@ -87,6 +92,8 @@ def generate(words, len_range_low, len_range_high, num_words, sep,
                     print(f"\tFailed attempt: len == {words_len + sep_chars}")
                 # recursion, try again
                 gen()
+            if cap_words:
+                rolled_words = [w.cpitalize() for w in rolled_words]
             return sep.join(rolled_words)
 
     passphrase = gen()
