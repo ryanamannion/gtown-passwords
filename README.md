@@ -13,7 +13,7 @@ This directory contains files for running the clone of Georgetown's baseline pas
 exact system, but instead a recreation made to the best of our knowledge of how Georgetown's system works. 
 
 ### Usage:
-* change any params you want in config.yml, they are set to Georgetown's params by default
+* change any params you want in config.yml
 * `baseline.py [-h] [-c CONFIG] [-v VERBOSE] [-n NUMBER_OUT]`
 * run `python baseline.py --help` for more info
 
