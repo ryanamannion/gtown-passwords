@@ -17,10 +17,16 @@ exact system, but instead a recreation made to the best of our knowledge of how 
 * `baseline.py [-h] [-c CONFIG] [-v VERBOSE] [-n NUMBER_OUT]`
 * run `python baseline.py --help` for more info
 
-# data
+# data (for baseline)
 	data/
 	|
 	|-- eff_large_wordlist.txt
 
 ### EFF Wordlist
 source: https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+
+# languagemodel
+
+This directory contains files for running the **cosine-distance based bi-gram language model generator**. Please see the README in this folder for more details.
+
+The LSTM-based language model is too big to fit in this repo (as it is forked from pytorch/examples), and can be found [here](https://github.com/nitinvwaran/examples/tree/master/word_language_model)
