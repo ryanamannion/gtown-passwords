@@ -3,7 +3,9 @@ import gensim.downloader as api
 import numpy as np
 import os
 import argparse
+import nltk
 
+from evaluationlm import LanguageModel
 from scipy.special import softmax
 from tqdm import tqdm
 
@@ -24,6 +26,8 @@ class Similarity():
 
         self.wordcount = wordcount
         self.useuniform = useuniform
+
+        self.evallm = LanguageModel()
 
 
     def initialize_models(self):
@@ -163,7 +167,15 @@ class Similarity():
                 nounindex = np.random.choice(len(self.nouns), 1, p=np.squeeze(self.adjnoun[adjindex]))[0]
                 nounindex2 = np.random.choice(len(self.nouns), 1, p=np.squeeze(self.nounnoun[nounindex]))[0]
 
-                out.write(self.adverbs[advindex] + sep + self.adjectives[adjindex] + sep + self.nouns[nounindex] + sep + self.nouns[nounindex2] + '\n')
+                st = []
+                st.append([self.adverbs[advindex],self.adjectives[adjindex],self.nouns[nounindex],self.nouns[nounindex2]])
+
+                test = [nltk.bigrams(t, pad_right=True, pad_left=True, left_pad_symbol="<s>",
+                                     right_pad_symbol="</s>") for t in st]
+                for _, t in enumerate(test):
+                    entropy = math.log(self.evallm.model.perplexity(t), 2)
+
+                out.write(self.adverbs[advindex] + sep + self.adjectives[adjindex] + sep + self.nouns[nounindex] + sep + self.nouns[nounindex2] + ',' + str(entropy) + '\n')
 
 
         """
@@ -176,7 +188,16 @@ class Similarity():
                 adjindex = np.random.choice(len(self.adjectives), 1, p=np.squeeze(self.advadj[advindex]))[0]
                 nounindex = np.random.choice(len(self.nouns), 1, p=np.squeeze(self.adjnoun[adjindex]))[0]
 
-                out.write(self.adverbs[advindex] + sep + self.adjectives[adjindex] + sep + self.nouns[nounindex] + '\n')
+                st = []
+                st.append(
+                    [self.adverbs[advindex], self.adjectives[adjindex], self.nouns[nounindex]])
+
+                test = [nltk.bigrams(t, pad_right=True, pad_left=True, left_pad_symbol="<s>",
+                                     right_pad_symbol="</s>") for t in st]
+                for _, t in enumerate(test):
+                    entropy = math.log(self.evallm.model.perplexity(t), 2)
+
+                out.write(self.adverbs[advindex] + sep + self.adjectives[adjindex] + sep + self.nouns[nounindex] + ',' + str(entropy) +  '\n')
 
         """
         Adv-Adj
@@ -187,7 +208,16 @@ class Similarity():
                 advindex = math.floor(random.uniform(0, len(self.adverbs)))
                 adjindex = np.random.choice(len(self.adjectives), 1, p=np.squeeze(self.advadj[advindex]))[0]
 
-                out.write(self.adverbs[advindex] + sep + self.adjectives[adjindex] +  '\n')
+                st = []
+                st.append(
+                    [self.adverbs[advindex], self.adjectives[adjindex]])
+
+                test = [nltk.bigrams(t, pad_right=True, pad_left=True, left_pad_symbol="<s>",
+                                     right_pad_symbol="</s>") for t in st]
+                for _, t in enumerate(test):
+                    entropy = math.log(self.evallm.model.perplexity(t), 2)
+
+                out.write(self.adverbs[advindex] + sep + self.adjectives[adjindex] + ',' + str(entropy) +  '\n')
 
         """
         Adj-Noun
@@ -198,7 +228,16 @@ class Similarity():
                 adjindex = math.floor(random.uniform(0, len(self.adjectives)))
                 nounindex = np.random.choice(len(self.nouns), 1, p=np.squeeze(self.adjnoun[adjindex]))[0]
 
-                out.write(self.adjectives[adjindex] + sep + self.nouns[nounindex] + '\n')
+                st = []
+                st.append(
+                    [self.adjectives[adjindex], self.nouns[nounindex]])
+
+                test = [nltk.bigrams(t, pad_right=True, pad_left=True, left_pad_symbol="<s>",
+                                     right_pad_symbol="</s>") for t in st]
+                for _, t in enumerate(test):
+                    entropy = math.log(self.evallm.model.perplexity(t), 2)
+
+                out.write(self.adjectives[adjindex] + sep + self.nouns[nounindex] + ',' + str(entropy) +  '\n')
 
 
 
