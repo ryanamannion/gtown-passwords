@@ -26,7 +26,7 @@ a. Python 3.8 (conda environment recommended) <br />
 b. The python packages: nltk, gensim, stanza, scipy <br />
 
 To generate some fun passphrases using the fictional dataset, run the following in sequence: <br />
-python preprocess.py <br />
-python similarities.py <br />
+`python preprocess.py` <br />
+`python similarities.py` <br />
 
 To generate passphrases with the Reuters News Corpus, run the commands above in sequence, but add the **--use-reuters** argument. 
