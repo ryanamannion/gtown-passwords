@@ -22,7 +22,7 @@ To make the password less hackable, the probability distributions of the bigram 
 
 ## Technical Implementation: <br />
 You will need the following: <br />
-a. Python 3.8 <br />
+a. Python 3.8 (conda environment recommended) <br />
 b. The python packages: nltk, gensim, stanza, scipy <br />
 
 To generate some fun passphrases using the fictional dataset, run the following in sequence: <br />
