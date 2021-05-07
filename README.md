@@ -9,7 +9,7 @@ This repo holds code for a final project in an ENLP class. The project is about 
 	|-- baseline-sample-pass.txt
 
 	
-This directory contains files for running the clone of Georgetown's baseline password system. This is NOT the
+[This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/languagemodel) contains files for running the clone of Georgetown's baseline password system. This is NOT the
 exact system, but instead a recreation made to the best of our knowledge of how Georgetown's system works. 
 
 ### Usage:
