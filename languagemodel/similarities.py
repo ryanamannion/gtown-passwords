@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 
 class Similarity():
-    def __init__(self,usereuters=False,wordcount=1000):
+    def __init__(self,usereuters=False,wordcount=1000,useuniform=False):
         self.adjnoun = None
         self.nounnoun = None
         self.advadj = None
@@ -23,6 +23,7 @@ class Similarity():
         self.separator = ['!', '@', '.', '-', '']
 
         self.wordcount = wordcount
+        self.useuniform = useuniform
 
 
     def initialize_models(self):
@@ -52,54 +53,85 @@ class Similarity():
 
     def populate_models(self):
 
-        for i in tqdm(range(0,len(self.adverbs))):
-            for j in range(0,len(self.adjectives)):
-                try:
-                    self.advadj[i][j] = self.wordvectors.distance(self.adverbs[i],self.adjectives[j])
-                except Exception as e:
-                    self.advadj[i][j] = 1
+        if self.useuniform == False:
 
-        self.advadj = softmax(self.advadj,axis=1)
+            """
+            use cosine-distance based probabilities
+            """
 
+            print('Using cosine-distance probabilities')
+
+            for i in tqdm(range(0,len(self.adverbs))):
+                for j in range(0,len(self.adjectives)):
+                    try:
+                        self.advadj[i][j] = self.wordvectors.distance(self.adverbs[i],self.adjectives[j])
+                    except Exception as e:
+                        self.advadj[i][j] = 1
+
+            for i in tqdm(range(0,len(self.adjectives))):
+                for j in range(0,len(self.nouns)):
+                    try:
+                        self.adjnoun[i][j] = self.wordvectors.distance(self.adjectives[i],self.nouns[j])
+                    except Exception as e:
+                        self.adjnoun[i][j] = 1
+
+
+            for i in tqdm(range(0,len(self.nouns))):
+                for j in range(0,len(self.nouns)):
+                    try:
+                        self.nounnoun[i][j] = self.wordvectors.distance(self.nouns[i],self.nouns[j])
+                    except Exception as e:
+                        self.nounnoun[i][j] = 1
+
+        else:
+
+            print ('Using uniform probabilities')
+
+            """
+            uniform probabilities - baseline
+            """
+
+            uadj = 1 / len(self.adjectives)
+            unoun = 1 / len(self.nouns)
+
+            for i in tqdm(range(0,len(self.adverbs))):
+                for j in range(0,len(self.adjectives)):
+                    self.advadj[i][j] = uadj
+
+            for i in tqdm(range(0,len(self.adjectives))):
+                for j in range(0,len(self.nouns)):
+                    self.adjnoun[i][j] = unoun
+
+            for i in tqdm(range(0,len(self.nouns))):
+                for j in range(0,len(self.nouns)):
+                    self.nounnoun[i][j] = unoun
+
+        self.adjnoun = softmax(self.adjnoun, axis=1)
+        for row in self.adjnoun:
+            assert round(float(np.sum(row)), 0) == float(1)
+
+        self.nounnoun = softmax(self.nounnoun, axis=1)
+        for row in self.nounnoun:
+            assert round(float(np.sum(row)), 0) == float(1)
+
+        self.advadj = softmax(self.advadj, axis=1)
         for row in self.advadj:
-            assert round(float(np.sum(row)),0) == float(1)
+            assert round(float(np.sum(row)), 0) == float(1)
 
         if self.usereuters == True:
-            np.save('models/reuters_advadj',self.advadj)
+            np.save('models/reuters_nounnoun', self.nounnoun)
         else:
-            np.save('models/poem_advadj', self.advadj)
-
-        for i in tqdm(range(0,len(self.adjectives))):
-            for j in range(0,len(self.nouns)):
-                try:
-                    self.adjnoun[i][j] = self.wordvectors.distance(self.adjectives[i],self.nouns[j])
-                except Exception as e:
-                    self.adjnoun[i][j] = 1
-
-        self.adjnoun = softmax(self.adjnoun,axis=1)
-        for row in self.adjnoun:
-            assert round(float(np.sum(row)),0) == float(1)
+            np.save('models/poem_nounnoun', self.nounnoun)
 
         if self.usereuters == True:
             np.save('models/reuters_adjnoun', self.adjnoun)
         else:
             np.save('models/poem_adjnoun', self.adjnoun)
 
-        for i in tqdm(range(0,len(self.nouns))):
-            for j in range(0,len(self.nouns)):
-                try:
-                    self.nounnoun[i][j] = self.wordvectors.distance(self.nouns[i],self.nouns[j])
-                except Exception as e:
-                    self.nounnoun[i][j] = 1
-
-        self.nounnoun = softmax(self.nounnoun,axis=1)
-        for row in self.nounnoun:
-            assert round(float(np.sum(row)),0) == float(1)
-
         if self.usereuters == True:
-            np.save('models/reuters_nounnoun', self.nounnoun)
+            np.save('models/reuters_advadj', self.advadj)
         else:
-            np.save('models/poem_nounnoun', self.nounnoun)
+            np.save('models/poem_advadj', self.advadj)
 
 
     def generate(self):
@@ -176,12 +208,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--use-reuters', action='store_true',
                         help='use reuters dataset')
+    parser.add_argument('--use-uniform', action='store_true',
+                        help='use uniform distribution')
     parser.add_argument('--words', type=int, default='1000',
                         help='number of passwords to generate')
 
     args = parser.parse_args()
 
-    sim = Similarity(usereuters=args.use_reuters,wordcount=args.words)
+    sim = Similarity(usereuters=args.use_reuters,wordcount=args.words,useuniform=args.use_uniform)
     sim.initialize_models()
     sim.generate()
 
