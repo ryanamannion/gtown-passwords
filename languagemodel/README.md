@@ -5,10 +5,10 @@ This repo contains code for the final term project for the ENLP Spring 2021 cour
 This project aims to generate memorable passphrases that are difficult to crack. 
 
 The basic idea behind doing this, is to use a series of Bi-gram Language Models to generate sequences of tokens that fit any of the following patterns: <br />
--Adverb-Adjective-Noun-Noun <br />
+`-Adverb-Adjective-Noun-Noun <br />
 -Adverb-Adjective-Noun <br />
 -Adverb-Adjective <br />
--Adjective-Noun <br />
+-Adjective-Noun <br />`
 
 Language Models are usually estimated using counts of co-located words. The problem with using counts is, that counts reflect statistics of everyday usage. This could make it easier to crack a password built using a Language Model that is based on everyday distributions of words. <br /> <br />
 To make the password less hackable, the probability distributions of the bigram language model are estimated instead using a **cosine-distance based measure**. If you want to generate a passphrase that is an adjective followed by a noun, a noun that is more distanced from the adjective is given more weight in the language model. This skews the language model into generating somewhat ludicrous yet grammatically correct sequences (you can try this out for yourself!)
