@@ -1,5 +1,5 @@
 # path to DiceWords list
-words: "../data/eff_large_wordlist.txt"
+words: "./eff_large_wordlist.txt"
 
 ###################################
 # parameters of output passphrase #
@@ -12,4 +12,4 @@ num_words: 5              # number of words in passphrase
 
 # DYNAMIC: Users are allowed to change these parameters
 cap_words: yes            # toggle capitalize first letter of each word
-sep: None                 # word separator, choose from: [".", "!", "-", "@", None]
+sep: "-"                 # word separator, choose from: [".", "!", "-", "@", None]
