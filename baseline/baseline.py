@@ -6,7 +6,7 @@ this file acts as the Georgetown baseline and is meant to be a clone of the new
 passphrase system based on information given to us by the Chief engineer of UIS
 
 BASIC USAGE (config.yml must be in same dir):
-    $ python baseline.py
+    $ python baseline.py -r
 
 FOR MORE USAGE NOTES:
     $ python baseline.py --help
