@@ -109,11 +109,22 @@ if __name__ == "__main__":
     parser.add_argument('-n', '--number-phrases', type=int, default=1,
                         dest="number_out",
                         help="number of passphrases to return")
+    parser.add_argument('-r', '--random', action="store_true",
+                        help="selects random parameters for each passphrase")
     args = parser.parse_args()
 
     with open(args.config, 'r') as configfile:
         config = yaml.safe_load(configfile)
 
     for _ in range(args.number_out):
+        if args.random:
+            # change config['cap_words']    one of two options
+            # change config['sep']          one of five options
+            caps = [True, False]
+            seps = [".", "!", "-", "@", None]
+            rand_caps = caps[random.randint(0, 1)]
+            rand_sep = seps[random.randint(0, 4)]
+            config['cap_words'] = rand_caps
+            config['sep'] = rand_sep
         phrase = generate(**config, verbose=args.verbose)
         print(phrase)
