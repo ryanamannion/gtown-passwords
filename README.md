@@ -20,7 +20,7 @@ exact system, but instead a recreation made to the best of our knowledge of how 
 * ensure your environment has any dependencies listed in `requirements.txt`:
 	* Run `$ pip install -r requirements.txt`
 * change any parameters you want in config.yml
-* `baseline.py [-h] [-c CONFIG] [-v VERBOSE] [-n NUMBER_OUT]`
+* `baseline.py [-h] [-c CONFIG] [-v VERBOSE] [-n NUMBER_OUT] [-r]`
 * run `$ python baseline.py --help` for more info
 
 # languagemodel
