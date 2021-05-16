@@ -41,7 +41,7 @@ Static Params: Georgetown's users cannot change these
 
 Dynamic Params: Georgetown's users can change these
 * toggle to capitalize first letter of each word
-* the separator to place between each word, from the set of [".", "!", "-", "@", None]
+* the separator to place between each word, from the set of `[".", "!", "-", "@", None]`
 
 NOTE: the dynamic params can be overridden at runtime with the `-r` option, which uses python's `random` 
 to choose the params each time a new password is generated. This is especially useful if you want to
