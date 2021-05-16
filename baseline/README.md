@@ -27,8 +27,10 @@ exact system, but instead a recreation made to the best of our knowledge of how 
 This version of the Dice Words list was sourced from the Electronic Frontier Foundation, see
 https://www.eff.org/dice for more information and additional wordlists.
 
-This could be easily re-implemented to accomodate other langugaes. The file containts a 5 integers from
+This could be easily re-implemented to accomodate other langugaes or wordlists. The file containts a 5 integers from
 1-6 (incl, like a dice roll), then a tab ('\t') and a word. Each entry is separated by a newline ('\n').
+
+To use a new wordlist, simply specify its location in `config.yml`
 
 ## `config.yml`
 
