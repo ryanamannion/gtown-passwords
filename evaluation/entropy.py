@@ -15,7 +15,7 @@ class PasswordEntropy():
 
         self.passwordfile = passwordfile
         self.symbolset = set()
-        self.entropytype = type # type of entropy, word-based or character based
+        self.entropytype = type # model  type
 
         self.efflist = []
         self.adverbs = []
