@@ -16,8 +16,8 @@ class PasswordEntropy():
         with open(self.passwordfile,'r') as f:
             for line in f.readlines():
                 line = line.strip()
-                if ',' in line:
-                    line = line.split(',')[0]
+                #if ',' in line:
+                #    line = line.split(',')[0]
                 self.symbolset.update(line)
 
     def calculate_password_entropy(self):
@@ -27,12 +27,11 @@ class PasswordEntropy():
                     line = line.strip()
                     if line != '':
                         if self.entropytype == 'char':
-                            if ',' in line:
-                                l = line.split(',')[0]
-                            else:
-                                l = line
-
-                            entropy = math.log(math.pow(len(self.symbolset),len(l)),2)
+                            #if ',' in line:
+                            #    l = line.split(',')[0]
+                            #else:
+                            #    l = line
+                            entropy = math.log(math.pow(len(self.symbolset),len(line)),2)
                             bientropy = bien(Bits(bytearray(line,'utf-8')))
 
 
