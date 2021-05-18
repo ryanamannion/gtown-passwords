@@ -30,4 +30,4 @@ To setup a conda environment to run the models, try the following: <br />
 
 # Disclaimers
 
-**The owners, and original co-contributors of this repository will assume no liabilities** resulting from any use of this repository by any party, entity, person, groups of persons, groups of entities, or any other body or collective that is not the original owner or original co-contributor of this repository. By using this repository in any form, **you the user alone will be liable for any and all liabilities incurred by yourself for any and all uses that you have actioned**. 
+**The owners, and original contributors of this repository will assume no liabilities** resulting from any use of this repository by any party, entity, person, groups of persons, groups of entities, or any other body or collective that is not the original owner or original contributor of this repository. By using this repository in any form, **you the user alone will be liable for any and all liabilities incurred by yourself for any and all uses that you have actioned**. 
