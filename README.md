@@ -17,3 +17,17 @@ The second language model generator type (LSTM-based language model) is too big 
 # userinput
 
 [This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/userinput) contains files for a memorability-enhanced password generator that takes user inputs and generates passwords semantically related to the input.
+
+# Setup & Installation
+
+To setup a conda environment to run the models, try the following: <br />
+1. Install Anaconda. Python 3.8 distribution recommended. <br />
+2. Run the following to create an environment and install all dependencies: <br />
+   `conda env create -f gtown-passwords.yml` <br />
+   `conda activate gtown-passwords` <br />
+   
+  Note, this installs the **CPU version of PyTorch** for the LSTM-language model.
+
+# Disclaimers
+
+**The authors and original co-contributors of this repository will assume no liabilities** resulting from any use of this repository by any party, entity, person, groups of persons, groups of entities, or any other body or collective that is not the original author or original co-contributor of this repository. By using this repository in any form, **you the user alone will be liable for any and all liabilities incurred by yourself for any and all uses that you have actioned**. 
