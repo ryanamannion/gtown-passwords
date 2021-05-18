@@ -10,7 +10,7 @@ Please see [the README](https://github.com/ryanamannion/gtown-passwords/blob/mai
 
 # languagemodel
 
-[This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/languagemodel) contains files for the first language model generator type, the **cosine-distance based bi-gram language model generator**. Please see the README in this folder for more details.
+[This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/languagemodel) contains files for the **uniform model language model generator** and the **cosine-distance based bi-gram language model generator**. Please see the README in this folder for more details.
 
 The second language model generator type (LSTM-based language model) is too big to fit in this repo (as it is forked from pytorch/examples), and can be found [here](https://github.com/nitinvwaran/examples/tree/master/word_language_model)
 
