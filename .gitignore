@@ -6,7 +6,7 @@ log.txt
 
 # MacOS
 *.DS_Store
-/languagemodel/data/output/
+/languagemodel/data/output/*.txt
 /languagemodel/data/adjectives.txt
 /languagemodel/data/adverbs.txt
 /languagemodel/data/nouns.txt
