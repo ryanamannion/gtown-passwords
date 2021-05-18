@@ -1,4 +1,31 @@
-# Cosine-Distance based Bi-Gram Language Model Generator for Passphrases
+# Uniform and Cosine-Distance based Bi-Gram Language Model Generators for Passphrases
+
+## Uniform Password Generator
+
+Run the following to generate passwords using the uniform model on the customized dataset: <br />
+`python preprocess.py ` <br />
+`python similarities.py --use-uniform` <br />
+
+
+Run the following to generate passwords using the uniform model on the Reuters News Corpus: <br />
+`python preprocess.py --use-reuters ` <br />
+`python similarities.py --use-reuters --use-uniform` <br />
+
+The output passphrases are generated `in languagemodel/data/output`
+
+## Cosine-Distance Password Generator
+Run the following to generate passwords using the cosine-distance model on the customized dataset: <br />
+`python preprocess.py ` <br />
+`python similarities.py ` <br />
+
+
+Run the following to generate passwords using the cosine-distance model on the Reuters News Corpus: <br />
+`python preprocess.py --use-reuters ` <br />
+`python similarities.py --use-reuters` <br />
+
+The output passphrases are generated `in languagemodel/data/output`
+
+## Details
 
 This repo contains code for the final term project for the ENLP Spring 2021 course at Georgetown. 
 
@@ -18,15 +45,3 @@ To make the password less hackable, the probability distributions of the bigram 
 -The **dataset** used for this project is a **collection of fictional works written by Lewis Carroll and Edward Lear**. This is in **data/train.txt**. The choice of the dataset is deliberate: the passphrases generated are happily more ludicrous and possibly more memorable as a result! <br />
 -There is also the option to use the **Reuters News Corpus** from nltk's in-built corpora, to generate passphrases for the patterns above. This takes somewhat longer. <br />
 -Passphrases are generated in the **data/output** folder. Four files are created, corresponding to the four patterns above. To keep in-line with the GU baseline system, tokens are separated by [! . @ - None]
-
-
-## Technical Implementation: <br />
-You will need the following: <br />
-a. Python 3.8 (conda environment recommended) <br />
-b. The python packages: nltk, gensim, stanza, scipy <br />
-
-To generate some fun passphrases using the fictional dataset, run the following in sequence: <br />
-`python preprocess.py` <br />
-`python similarities.py` <br />
-
-To generate passphrases with the Reuters News Corpus, run the commands above in sequence, but add the **--use-reuters** argument. 
