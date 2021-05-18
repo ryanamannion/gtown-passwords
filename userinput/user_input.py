@@ -7,12 +7,12 @@ import pykakasi
 import argparse
 
 args = argparse.ArgumentParser()
-args.add_argument('-n', '--numwords', default = 0, type = int, help = 'Up to 3 words to form your pw')
+args.add_argument('-w', '--word', type = str, required = True, help = 'User-defined input')
+args.add_argument('-l', '--lang', type = str, help = 'User-defined L2')
+args.add_argument('-n', '--numwords', default = 0, type = int, help = '# words to be included in your pw')
 args.add_argument('-c', '--capital', action = 'store_true', help = 'Capitalize the first letter')
 args.add_argument('-u', '--upper', action = 'store_true', help = 'Randomly capitalize letters')
 args.add_argument('-s', '--special', action = 'store_true', help = 'Replace with special chars')
-args.add_argument('-w', '--word', type = str, required = True, help = 'User-defined input')
-args.add_argument('-l', '--lang', type = str, help = 'User-defined L2')
 
 args = args.parse_args()
 numwords = args.numwords
