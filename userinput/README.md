@@ -6,7 +6,7 @@
 	|-- user_input.py
 	|-- sample_generator.py
 
-This directory contains files for running the User Input Model. `user_input.py` is the model for users to run, and `sample_generator.py` was used to generate 1,000 samples for evaluation, and not designed for users to run. `common_nouns1000.txt` was only used as an imitation of user input. Because manually defining a user input 1,000 times was not realistic, a random word was selected from this list as a user input.
+This directory contains files for running the User Input Model. `user_input.py` is the model for users to run, and `sample_generator.py` was used to generate 1,000 samples for evaluation, and not designed for users to run. `common_nouns1000.txt` was taken from https://www.wordexample.com/list/most-common-nouns-english and only used as an imitation of user input. Because manually defining a user input 1,000 times was not realistic, a random word was selected from this list as a user input.
 
 ### Usage:
 * Options: `user_input.py [-w --word] [-l --lang] [-n --numwords] [-c --capital] [-u --upper] [-s --special]`
