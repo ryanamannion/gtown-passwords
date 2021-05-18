@@ -1,17 +1,17 @@
 # Uniform and Cosine-Distance based Bi-Gram Language Model Generators for Passphrases
 
-## Uniform Password Generator
+## Uniform Model Password Generator
 
 Run the following to generate passwords using the uniform model on the customized dataset: <br />
 `python preprocess.py ` <br />
 `python similarities.py --use-uniform` <br />
 
 
-Run the following to generate passwords using the uniform model on the Reuters News Corpus: <br />
+Run the following to generate passwords using the uniform model on the Reuters News Corpus _(takes a while on a CPU)_: <br />
 `python preprocess.py --use-reuters ` <br />
 `python similarities.py --use-reuters --use-uniform` <br />
 
-The output passphrases are generated `in languagemodel/data/output`
+The output passphrases are generated in `languagemodel/data/output`
 
 ## Cosine-Distance Password Generator
 Run the following to generate passwords using the cosine-distance model on the customized dataset: <br />
@@ -23,7 +23,7 @@ Run the following to generate passwords using the cosine-distance model on the R
 `python preprocess.py --use-reuters ` <br />
 `python similarities.py --use-reuters` <br />
 
-The output passphrases are generated `in languagemodel/data/output`
+The output passphrases are generated in `languagemodel/data/output`
 
 ## Details
 
