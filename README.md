@@ -18,6 +18,10 @@ The second language model generator type (LSTM-based language model) is too big 
 
 [This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/userinput) contains files for a memorability-enhanced password generator that takes user inputs and generates passwords semantically related to the input.
 
+# autoencoder
+
+[This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/autoencoder) contains files for a standard and a variational autoencoder. Please see the [README]((https://github.com/ryanamannion/gtown-passwords/tree/main/autoencoder/README.md) file for more details.
+
 # evaluation
 
 Two evaluation metrics are used: <br />
