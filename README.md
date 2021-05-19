@@ -20,7 +20,7 @@ The second language model generator type (LSTM-based language model) is too big 
 
 # autoencoder
 
-[This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/autoencoder) contains files for a standard and a variational autoencoder. Please see the [README]((https://github.com/ryanamannion/gtown-passwords/tree/main/autoencoder/README.md) file for more details.
+[This directory](https://github.com/ryanamannion/gtown-passwords/tree/main/autoencoder) contains files for a standard and a variational autoencoder. Please see the [README](https://github.com/ryanamannion/gtown-passwords/tree/main/autoencoder/README.md) file for more details.
 
 # evaluation
 
