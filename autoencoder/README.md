@@ -12,4 +12,14 @@ The data we use are included in [`autoencoder/data`](https://github.com/ryanaman
 
 It's very easy to run the code on Google Colab directly, just follow these steps:
 
-- Open a new Colab notebook, https://research.google.com/colaboratory/
+- Open a new Colab notebook here https://research.google.com/colaboratory/
+- Git the repository to your own Google Drive using the code below:
+
+  ```python
+  from google.colab import drive
+  drive.mount('/content/drive/')
+
+  %cd '/content/drive/My Drive' 
+
+  !git clone https://github.com/ryanamannion/gtown-passwords.git
+  ```
