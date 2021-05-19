@@ -8,9 +8,9 @@ Two models, Stanndard Autoencoder and Variational Autoencoder (VAE) are included
 
 The data we use are included in [`autoencoder/data`](https://github.com/ryanamannion/gtown-passwords/edit/main/autoencoder/data). Go to this directory for more information.
 
-## To Run
+## Quick Start
 
-It's very easy to run the code on Google Colab directly, just follow these steps:
+It's very easy to run the code on Google Colab directly. Here are 4 simple steps:
 
 - Open a new Colab notebook here https://research.google.com/colaboratory/.
 - Git the repository to your own Google Drive using the code below:
