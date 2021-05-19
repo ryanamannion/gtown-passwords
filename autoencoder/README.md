@@ -2,7 +2,7 @@
 
 The autoencoder model includes an encoder and a decoder, where the encoder captures significant information by mapping original passwords into lower dimension vectors, and the decoder uses the information to recreate the original passwords. The intuition is to use the encoder to learn the patterns (e.g., capital letters, English words, numbers, special characters) in the training data and then use the decoder to generate new passwords with similar patterns, by minimizing the difference between the original passwords and the reconstructed ones.
 
-Two models, Stanndard Autoencoder and Variational Autoencoder (VAE) are included in [`autoencoder/model`](https://github.com/ryanamannion/gtown-passwords/edit/main/autoencoder/model).
+Two models, Standard Autoencoder and Variational Autoencoder (VAE) are included in [`autoencoder/model`](https://github.com/ryanamannion/gtown-passwords/edit/main/autoencoder/model).
 
 ## Data
 
