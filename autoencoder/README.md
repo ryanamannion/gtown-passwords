@@ -10,8 +10,6 @@ The data we use are included in [`autoencoder/data`](https://github.com/ryanaman
 
 ## To Run
 
-There are two ways to run the model:
+It's very easy to run the code on Google Colab directly, just follow these steps:
 
-### Run On Google Colab
-
-### Run Locally
+- Open a new Colab notebook, https://research.google.com/colaboratory/
